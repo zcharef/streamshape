@@ -16,10 +16,13 @@ End User Product
 --------
 Here is an example of the product being used in a real-life scenario by the TikTok Streamer [Elric](https://www.tiktok.com/@elric.off) : 
 
-*  Real Time Chat Widget
-[![YT1](https://img.youtube.com/vi/70_usy6__E0/0.jpg)](https://www.youtube.com/watch?v=70_usy6__E0)
+*  [Real Time Chat Widget](https://www.youtube.com/watch?v=70_usy6__E0) \
+\
+[![YT1](https://img.youtube.com/vi/70_usy6__E0/maxresdefault.jpg)](https://www.youtube.com/watch?v=70_usy6__E0)
 
-* Alert Widgets [![YT1](https://img.youtube.com/vi/F-k9EPhZYfA/0.jpg)](https://www.youtube.com/watch?v=F-k9EPhZYfA)
+* [Alert Widgets](https://www.youtube.com/watch?v=F-k9EPhZYfA) \
+\
+[![YT1](https://img.youtube.com/vi/F-k9EPhZYfA/maxresdefault.jpg)](https://www.youtube.com/watch?v=F-k9EPhZYfA)
 
 
 Architecture
@@ -55,5 +58,11 @@ Conclusion
 ----------
 
 Thanks to StreamShape, I have developed valuable skills in building a functional SaaS product from scratch, while focusing on the eXtremeLean philosophy of rapidly delivering a Minimum Viable Product (MVP). This project has not only honed my technical expertise but also provided me with insights into the challenges of creating a successful SaaS platform. I invite you to explore the project, learn from it, or continue developing it further.
+
+Acknowledgments
+----------
+Special thanks to :
+*  [François-Guillaume RIBREAU](https://github.com/FGRibreau) for sharing his knowledge and experience with me on SaaS projects.
+*  [William PIERRE](https://www.linkedin.com/in/william-pierre-879020153/) for his outstanding work in managing and acquiring new clients, and for his contributions to the business side of the project.
 
 Contact me on [Twitter](https://twitter.com/zayed_charef) or email me at zayed.charef@gmail.com if you have any questions.
