@@ -1,7 +1,9 @@
 StreamShape: A TikTok Live Streaming SaaS Showcase
 ==================================================
+![image info](./logo.png)
 
-Welcome to the source code of [StreamShape](https://streamshape.net/), one of my initial endeavors in building a SaaS platform for TikTok live streaming. Although this project has been discontinued and might be outdated, I am sharing it as a testament to my capabilities and for anyone interested in learning from or continuing the project.
+
+Welcome to the source code of [StreamShape](https://streamshape.net/), one of my initial endeavors in building a SaaS platform. Although this project has been discontinued and might be outdated, I am sharing it for anyone interested in learning from or continuing the project.
 
 Overview
 --------
@@ -9,6 +11,16 @@ Overview
 StreamShape was created in about two months while I was studying and working on it during nights and weekends. The project leverages the [TikTok Live Connector](https://github.com/zerodytrash/TikTok-Live-Connector) and aims to provide a scalable solution for streamers. However, due to constant changes in TikTok's security, the service faced disruptions, leading to its discontinuation.
 
 Despite some missing features and areas for improvement, such as unit tests and abstract layers, StreamShape managed to attract a dozen customers with monthly subscriptions within three months.
+
+End User Product
+--------
+Here is an example of the product being used in a real-life scenario by the TikTok Streamer [Elric](https://www.tiktok.com/@elric.off) : 
+
+*  Real Time Chat Widget
+[![YT1](https://img.youtube.com/vi/70_usy6__E0/0.jpg)](https://www.youtube.com/watch?v=70_usy6__E0)
+
+* Alert Widgets [![YT1](https://img.youtube.com/vi/F-k9EPhZYfA/0.jpg)](https://www.youtube.com/watch?v=F-k9EPhZYfA)
+
 
 Architecture
 ------------
@@ -21,6 +33,8 @@ The ideal architecture for this project consisted of:
 *   A managed RabbitMQ server (AWS MQ)
 
 However, due to my limited experience with AWS at the time, I used DigitalOcean instances for all components and manually deployed brokers for new subscribers. The project could be migrated to a more sophisticated architecture as described above if needed.
+
+![image info](./architecture.png)
 
 StreamShape also utilized external SaaS solutions, such as Better Uptime for monitoring APIs and brokers and Stripe for handling subscriptions.
 
@@ -40,4 +54,6 @@ I had initially planned to create a user dashboard and automate broker creation 
 Conclusion
 ----------
 
-StreamShape demonstrates my ability to create a functional SaaS product and my commitment to the eXtremeLean philosophy, focusing on delivering an MVP as quickly as possible. Feel free to explore the project, learn from it, or continue developing it further.
+Thanks to StreamShape, I have developed valuable skills in building a functional SaaS product from scratch, while focusing on the eXtremeLean philosophy of rapidly delivering a Minimum Viable Product (MVP). This project has not only honed my technical expertise but also provided me with insights into the challenges of creating a successful SaaS platform. I invite you to explore the project, learn from it, or continue developing it further.
+
+Contact me on [Twitter](https://twitter.com/zayed_charef) or email me at zayed.charef@gmail.com if you have any questions.
