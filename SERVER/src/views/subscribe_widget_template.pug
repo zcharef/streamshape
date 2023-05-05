@@ -1,0 +1,29 @@
+html
+	head
+		title="Subscribe Widget"
+		style(type='text/css').
+			.alert_img {
+				content: url(#{alert_img_src});
+				height: #{alert_img_height};
+			}
+			.author {
+				color: #{author_color};
+			}
+			.sent_sentence {
+				color: #{sent_sentence_color};
+			}
+	style
+		include ./includes/css/main.css
+	style(src="https://fonts.googleapis.com/css?family=Source%20Sans%20Pro")
+	script(type="module") let e = new SubscribeHandler('#{tiktok_username}', #{alert_duration}, '#{alert_sound}');
+		include ./includes/js/subscribeHandler.js
+
+	body(class="widget")
+		div(id="alertbox" class="alertbox")
+			img(class="alert_img")
+			br
+			span(id="author" class="author heartbeat")
+			span(class="sent_sentence").
+				&nbsp
+				#{sent_sentence}
+				&nbsp

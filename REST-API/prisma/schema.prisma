@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email          String    @unique
+  email_verified Boolean   @default(false)
+  password       String
+  first_name     String?
+  last_name      String?
+  config         Config?
+  permissions    Json      @default("{}")
+  orders         Order[]
+  premium        Boolean   @default(false)
+  createdAt      DateTime? @default(now())
+  updatedAt      DateTime? @updatedAt
+  // keycloakId			String		@unique
+}
+
+model Config {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user            User      @relation(fields: [userId], references: [id])
+  userId          String    @unique @db.Uuid
+  tiktokUsername  String?
+  giftWidget      Json      @default("{\"name_color\":\"#ffffff\",\"count_color\":\"#ffff00\",\"icon_height\":\"50px\",\"author_color\":\"#0ae5ec\",\"sent_sentence\":\"sent\",\"alert_img_src\":\"https://api.services.streamshape.net/static/default_alert.gif\",\"alert_duration\":\"4000\",\"alert_sound\":\"https://www.mboxdrive.com/sound.mp3\",\"alert_img_height\":\"100px\"}")
+  followWidget    Json      @default("{\"author_color\":\"#0ae5ec\",\"alert_img_src\":\"https://api.services.streamshape.net/static/default_alert.gif\",\"alert_duration\":\"4000\",\"alert_sound\":\"https://www.mboxdrive.com/sound.mp3\",\"alert_img_height\":\"100px\",\"sent_sentence_color\":\"#ffffff\",\"sent_sentence\":\"has followed on TikTok!\"}")
+  subscribeWidget Json      @default("{\"author_color\":\"#0ae5ec\",\"alert_img_src\":\"https://api.services.streamshape.net/static/default_alert.gif\",\"alert_duration\":\"4000\",\"alert_sound\":\"https://www.mboxdrive.com/sound.mp3\",\"alert_img_height\":\"100px\",\"sent_sentence_color\":\"#ffffff\",\"sent_sentence\":\"has subscribed on TikTok!\"}")
+  likeWidget      Json      @default("{\"author_color\":\"#0ae5ec\",\"alert_img_src\":\"https://api.services.streamshape.net/static/hearts.gif\",\"alert_duration\":\"3000\",\"alert_img_height\":\"100px\"}")
+  chatWidget      Json      @default("{\"delay\":\"0\"}")
+  goalWidget      Json      @default("{\"gift\":{\"sentence\":\"TikTokGIFTGoal\",\"target_value\":500,\"current_value\":0,\"emote_img_src\":\"https://image.similarpng.com/very-thumbnail/2020/07/Love-icons-social-media-vector-PNG.png\",\"emote_img_height\":\"56px\",\"text_color\":\"#fe365c\",\"gradient_start\":\"#0000ff\",\"gradient_end\":\"#fe365c\"},\"like\":{\"sentence\":\"TikTokLIKEGoal\",\"target_value\":500,\"current_value\":0,\"emote_img_src\":\"https://image.similarpng.com/very-thumbnail/2020/07/Love-icons-social-media-vector-PNG.png\",\"primary_color\":\"#0000ff\",\"sentence_color\":\"#fe365c\",\"emote_img_height\":\"56px\",\"text_color\":\"#fe365c\",\"gradient_start\":\"#0000ff\",\"gradient_end\":\"#fe365c\"},\"follow\":{\"sentence\":\"TikTokFollowGoal\",\"target_value\":5000,\"current_value\":0,\"emote_img_src\":\"https://image.similarpng.com/very-thumbnail/2020/07/Love-icons-social-media-vector-PNG.png\",\"primary_color\":\"#0000ff\",\"sentence_color\":\"#fe365c\",\"emote_img_height\":\"0\",\"text_color\":\"#fe365c\",\"gradient_start\":\"#0000ff\",\"gradient_end\":\"#fe365c\"},\"subscribe\":{\"sentence\":\"TikTokSUBSCRIBEGoal\",\"target_value\":5000,\"current_value\":0,\"emote_img_src\":\"https://image.similarpng.com/very-thumbnail/2020/07/Love-icons-social-media-vector-PNG.png\",\"primary_color\":\"#0000ff\",\"sentence_color\":\"#fe365c\",\"emote_img_height\":\"56px\",\"text_color\":\"#fe365c\",\"gradient_start\":\"#0000ff\",\"gradient_end\":\"#fe365c\"}}")
+  createdAt       DateTime? @default(now())
+  updatedAt       DateTime? @updatedAt
+}
+
+model Order {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user      User      @relation(fields: [userId], references: [id])
+  userId    String    @db.Uuid
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+}

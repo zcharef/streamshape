@@ -1,0 +1,40 @@
+html
+	head
+		title="Gift Widget"
+		style(type='text/css').
+			.alert_img {
+				content: url(#{alert_img_src});
+				height: #{alert_img_height};
+			}
+			.author {
+				color: #{author_color};
+			}
+			.count {
+				color: #{count_color};
+			}
+			.icon {
+				height: #{icon_height};
+			}
+			.name {
+				color: #{name_color};
+			}
+	style
+		include ./includes/css/main.css
+	style(src="https://fonts.googleapis.com/css?family=Source%20Sans%20Pro")
+	script(type="module") let e = new GiftHandler('#{tiktok_username}', #{alert_duration}, '#{alert_sound}');
+		include ./includes/js/giftHandler.js
+
+	body(class="widget")
+		div(id="alertbox" class="alertbox")
+			img(class="alert_img")
+			br
+			span(id="author" class="author heartbeat")
+			span.
+				&nbsp
+				#{sent_sentence}
+				&nbsp
+			span(id="count" class="count")
+			span. 
+				&nbsp
+			span(id="name" class="name")
+			img(id="icon" class="icon")

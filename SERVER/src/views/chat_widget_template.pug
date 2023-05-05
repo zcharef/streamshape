@@ -1,0 +1,11 @@
+html
+	head
+		title="Chat Widget"
+		style(type='text/css').
+	style
+		include ./includes/css/chat.css
+	script(type="module") let e = new ChatHandler('#{tiktok_username}', #{delay});
+		include ./includes/js/chatHandler.js
+
+	body(class="widget")
+		div(id="chat-thread" class="chat-thread")

@@ -1,0 +1,123 @@
+/*
+code couleur tiktok :
+black : #151719
+grey : #9ca9b3 
+*/
+
+body {
+  background-color: transparent;
+}
+
+.widget {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  /*padding: 50px 0;*/
+  background: transparent;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.bar {
+  background: #9ca9b3;
+  width: 90%;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 1%;
+}
+
+.counter {
+  font-size: 50px;
+  font-family: monospace;
+  font-weight: 800;
+  padding: 5px 0px;
+}
+
+.output {
+  width: 100%;
+  padding: 30px 0;
+  background: transparent;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.circle {
+  width: 150px; /* valeur de base 100*/
+  height: 150px; /* valeur de base 100*/
+  border-radius: 50%;
+  animation: animate 1.3s ease;
+}
+
+.checkmark {
+  transform: rotate(45deg);
+  height: 100px;
+  width: 48px;
+  margin-left: 45px;
+  margin-top: 10px;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-60px) scale(0.6) rotate(0deg);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(0.3) rotate(90deg) skewY(-40deg);
+    width: 50px;
+  }
+
+  75% {
+    transform: scale(1.4) rotate(180deg) skewY(20deg);
+    width: 10px;
+  }
+
+  100% {
+    transform: translateY(0px) scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti-slow {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+
+  100% {
+    transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+  }
+}
+
+.confetti-container {
+  perspective: 700px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.confetti {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  border-radius: 0%;
+  animation: confetti-slow 4s ease;
+}

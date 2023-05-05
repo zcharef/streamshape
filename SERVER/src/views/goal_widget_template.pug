@@ -1,0 +1,50 @@
+html
+	head
+		title="Goal Widget"
+		style(type='text/css').
+			.sentence {
+				text-align: center;
+				font-family: "Source Sans Pro", sans-serif;
+			 	font-weight: 600;
+				font-size: 50px;
+				color: #{text_color};
+			}
+			.emote_img {
+				content: url(#{emote_img_src});
+				height: #{emote_img_height};
+			}
+			.fill {
+				background: linear-gradient(45deg, #{gradient_start}, #{gradient_end});
+			}
+			.counter {
+				color: #{text_color};
+			}
+			.circle {
+				border: 10px solid #{text_color};
+			}
+			.checkmark {
+				border-right: 10px solid #{text_color};
+				border-bottom: 10px solid #{text_color};
+			}
+	style
+		include ./includes/css/goal.css
+	style(src="https://fonts.googleapis.com/css?family=Source%20Sans%20Pro")
+	script(type="module") let e = new GoalHandler('#{tiktok_username}', '#{goal_event}', #{goal_current_value}, #{goal_target_value});
+		include ./includes/js/goalHandler.js
+
+	body
+		div(class="widget")
+			div(class="container")
+				div(class="bar")
+					div(class="fill")
+				span(class="counter")
+				img(class="emote_img")
+				div(class="sentence").
+					#{sentence}
+			//- button(type='button' id="test").
+			//- 	ok
+		
+			div(class="output")
+				div(class="circle")
+					div(class="checkmark")
+			

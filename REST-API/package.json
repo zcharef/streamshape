@@ -1,0 +1,34 @@
+{
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npx prisma generate && node src/app.js",
+    "lint": "./node_modules/.bin/eslint",
+    "format": "prettier -w ."
+  },
+  "type": "module",
+  "dependencies": {
+    "amqplib": "^0.10.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-oauth2-jwt-bearer": "^1.1.0",
+    "express-openid-connect": "^2.7.2",
+    "express-session": "^1.17.3",
+    "prisma": "^3.15.2",
+    "pug": "^3.0.2",
+    "socket.io": "^4.5.1",
+    "swagger-ui-express": "^4.4.0"
+  },
+  "devDependencies": {
+    "@prisma/client": "3.15.2",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.7.0"
+  }
+}

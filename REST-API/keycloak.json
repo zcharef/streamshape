@@ -1,0 +1,8 @@
+{
+  "realm": "streamshape",
+  "bearer-only": true,
+  "auth-server-url": "https://lemur-12.cloud-iam.com/auth/",
+  "ssl-required": "external",
+  "resource": "streamshape-api-rest",
+  "confidential-port": 0
+}
